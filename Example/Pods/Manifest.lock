@@ -1,0 +1,19 @@
+PODS:
+  - Reachability (3.2)
+  - WBNetworkingLite (1.0.0):
+    - Reachability
+
+DEPENDENCIES:
+  - WBNetworkingLite (from `../`)
+
+EXTERNAL SOURCES:
+  WBNetworkingLite:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  WBNetworkingLite: ef04fe953567556daa46a515006931935d80106a
+
+PODFILE CHECKSUM: 35aa9d4153fc0b75bfd0fa2f8c8f981df1dc27b9
+
+COCOAPODS: 1.4.0.beta.2

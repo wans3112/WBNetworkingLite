@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'WBNetworkingLite_Example' do
+  pod 'WBNetworkingLite', :path => '../'
+
+  target 'WBNetworkingLite_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

@@ -1,0 +1,932 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0BB1526B15D8B83621335E55AD194BD8 /* WBNetworkingLite.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BA161E7647A4FFA491D0A226D68360E /* WBNetworkingLite.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1913B85B1899D51F75F452D29A2A872C /* LYNetWorkingConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = B91F1B59794DF7B7D52D563E52E95DE1 /* LYNetWorkingConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1927E570F7E2A48124B62B602BAE521A /* LYNetWorkingManager.h in Headers */ = {isa = PBXBuildFile; fileRef = FB454930BB73D48F6F74E6DCAA26DF4F /* LYNetWorkingManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		21500394ECB9A988F65B7542C9F6EDE8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67BDCA8222186AAE6772023FF85CD770 /* Foundation.framework */; };
+		25B3B8319CDBB9D316EE06217A05F8A4 /* Pods-WBNetworkingLite_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 69E1977D2336041C1E68124312607795 /* Pods-WBNetworkingLite_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3F4AED8D91F5DD3FD651668C6CC311B5 /* WBNetworkingLite-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ACC2F83109D6340BB49381BB28117929 /* WBNetworkingLite-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		42E8639AFDA21316BDEB6CC992FF0E1E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67BDCA8222186AAE6772023FF85CD770 /* Foundation.framework */; };
+		45AF7EBBEFA45DC091F0B6B7D14B8503 /* LYHMReachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 2977E9A4FE8EBC40D62210A60F7B6114 /* LYHMReachability.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		575F20E6BBF066D208DA96C645C7BB69 /* LYNetWorkingConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 392A5004E8AFACF3D0CFF3261E7259FD /* LYNetWorkingConfig.m */; };
+		63122F8872D58543D7E3E43D817942E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67BDCA8222186AAE6772023FF85CD770 /* Foundation.framework */; };
+		641F8B99E928F040750C5C444BB8F680 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA04E63878EDA4387CC9AC461314528 /* SystemConfiguration.framework */; };
+		7EAA8135DCBCD41FEAFEB10E4352A4F5 /* Pods-WBNetworkingLite_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F7171DC31734493AC6C0ABCC8AA882F /* Pods-WBNetworkingLite_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8D43998EFEDFD453327BDFA6ED308751 /* Pods-WBNetworkingLite_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6383EFD787345D28D5F45944D56A90 /* Pods-WBNetworkingLite_Tests-dummy.m */; };
+		8FFDA9F9A8D5115102DB8863030D638A /* LYNetWorking.m in Sources */ = {isa = PBXBuildFile; fileRef = 755AB678C0D3285EFA07673123F5AE7D /* LYNetWorking.m */; };
+		9A1DB7615A1CB02CE124A83BCCDFF213 /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64A37CCE8B305B51BF5D9D5BBAE395A2 /* Reachability.framework */; };
+		9DCE73BB965FFCC2D5889188570D18F7 /* WBNetworkingLite-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1D8698674DFE1E30A239044FF3F7FA /* WBNetworkingLite-dummy.m */; };
+		B070F4362C73F7B0D7CCA0CEC02D616A /* LYNetWorking.h in Headers */ = {isa = PBXBuildFile; fileRef = 0982E899DAC06E60D344E406A2078878 /* LYNetWorking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B6F8402A85A4E9C9E232CFAFFA49B0C0 /* Reachability-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 081A82A2E9888F43316F467EC6A8401D /* Reachability-dummy.m */; };
+		BF7B4A171B96ABAC754DE06B0CC9AF22 /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A936234CB17B250090CB411E06DF362 /* Reachability.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D42250A9D136BB999ABC3D09C06AE2E8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67BDCA8222186AAE6772023FF85CD770 /* Foundation.framework */; };
+		DE33EC6B4D9DF2D4594B2F0D43945DC3 /* LYHMReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 524967D4DA9DF0F795230B0FE284C780 /* LYHMReachability.m */; };
+		E581F9E533AE3E5CE3032E6EA3B1BE5F /* Pods-WBNetworkingLite_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8690F3A38919739A35418C9B5F71FA /* Pods-WBNetworkingLite_Example-dummy.m */; };
+		EA15E4C20397D30EF865053C0205C851 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D34F4CDC64DC5D3F5FC1CD5E4F71579B /* Reachability.m */; };
+		F3B7462B0ED84B5D07BABED117CBC801 /* Reachability-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 504C1D1C71F35A1CC96C32FC4A47E48A /* Reachability-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FA27E8642DEC83D1539EA7DDE632D3C3 /* LYNetWorkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F14703B608E0FF0438D031B96A2F4C /* LYNetWorkingManager.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		575F2ED52C45E8CC7143F674A94297E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 187F3CD1A612BDF2482E57BB62CE1E84;
+			remoteInfo = WBNetworkingLite;
+		};
+		7053703A826F22B91AAA8667FD7E8CED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9061B01F7F798C54ACF28CB17BD473B5;
+			remoteInfo = Reachability;
+		};
+		C2A802E20575615E29B1001E503DC890 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9061B01F7F798C54ACF28CB17BD473B5;
+			remoteInfo = Reachability;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		081A82A2E9888F43316F467EC6A8401D /* Reachability-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Reachability-dummy.m"; sourceTree = "<group>"; };
+		0982E899DAC06E60D344E406A2078878 /* LYNetWorking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LYNetWorking.h; path = WBNetworkingLite/Classes/LYNetWorking.h; sourceTree = "<group>"; };
+		0A553202577B6238B4461E9BDE397DD2 /* Pods-WBNetworkingLite_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WBNetworkingLite_Example.release.xcconfig"; sourceTree = "<group>"; };
+		0B9209E13562578E3BE6213146896F31 /* WBNetworkingLite.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = WBNetworkingLite.xcconfig; sourceTree = "<group>"; };
+		18216F6B6EBAF7EC00A564704DA825D7 /* Pods-WBNetworkingLite_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WBNetworkingLite_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		1DF02C34612E248A2051EDC0423B83DD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F867131F9CB3309093CA496144B945D /* Pods-WBNetworkingLite_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WBNetworkingLite_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		2977E9A4FE8EBC40D62210A60F7B6114 /* LYHMReachability.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LYHMReachability.h; path = WBNetworkingLite/Classes/LYHMReachability.h; sourceTree = "<group>"; };
+		36A835A2F620F642B44C0E248FD5FDEB /* Pods-WBNetworkingLite_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WBNetworkingLite_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		392A5004E8AFACF3D0CFF3261E7259FD /* LYNetWorkingConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LYNetWorkingConfig.m; path = WBNetworkingLite/Classes/LYNetWorkingConfig.m; sourceTree = "<group>"; };
+		3FD97031E5D2BEDC3E6FCBED52AC745F /* WBNetworkingLite.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = WBNetworkingLite.modulemap; sourceTree = "<group>"; };
+		416FC7563864EE761689095B07F04F93 /* Pods_WBNetworkingLite_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_WBNetworkingLite_Tests.framework; path = "Pods-WBNetworkingLite_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		45F14703B608E0FF0438D031B96A2F4C /* LYNetWorkingManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LYNetWorkingManager.m; path = WBNetworkingLite/Classes/LYNetWorkingManager.m; sourceTree = "<group>"; };
+		471B597FBCDB02B376DEA941057AB333 /* Pods-WBNetworkingLite_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WBNetworkingLite_Example-frameworks.sh"; sourceTree = "<group>"; };
+		4A0A2BB6D4358A98106234A4F66170A4 /* WBNetworkingLite-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WBNetworkingLite-prefix.pch"; sourceTree = "<group>"; };
+		504C1D1C71F35A1CC96C32FC4A47E48A /* Reachability-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Reachability-umbrella.h"; sourceTree = "<group>"; };
+		524967D4DA9DF0F795230B0FE284C780 /* LYHMReachability.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LYHMReachability.m; path = WBNetworkingLite/Classes/LYHMReachability.m; sourceTree = "<group>"; };
+		55FFBA2870F5F50CEFAFC0BA8C2A7748 /* Pods-WBNetworkingLite_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WBNetworkingLite_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		5A5DB8BF965D476B48E76F41899D8A01 /* Pods-WBNetworkingLite_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WBNetworkingLite_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		5ADAACA697EC7AA6CE7EA2797F45573B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F7171DC31734493AC6C0ABCC8AA882F /* Pods-WBNetworkingLite_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WBNetworkingLite_Example-umbrella.h"; sourceTree = "<group>"; };
+		642DF5F92EDE72BDA53F208583AE40CA /* Pods-WBNetworkingLite_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WBNetworkingLite_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		64A37CCE8B305B51BF5D9D5BBAE395A2 /* Reachability.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Reachability.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		67BDCA8222186AAE6772023FF85CD770 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		69E1977D2336041C1E68124312607795 /* Pods-WBNetworkingLite_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WBNetworkingLite_Tests-umbrella.h"; sourceTree = "<group>"; };
+		6B0FD50B1D6D88AD89BD8559C385BA16 /* Pods-WBNetworkingLite_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WBNetworkingLite_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		755AB678C0D3285EFA07673123F5AE7D /* LYNetWorking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LYNetWorking.m; path = WBNetworkingLite/Classes/LYNetWorking.m; sourceTree = "<group>"; };
+		781AFEEF2AF3D4EA837079DD9CCA39A5 /* Pods-WBNetworkingLite_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WBNetworkingLite_Tests-resources.sh"; sourceTree = "<group>"; };
+		7A936234CB17B250090CB411E06DF362 /* Reachability.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		85511C7D60C18B0880A54222A04F7720 /* Pods-WBNetworkingLite_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WBNetworkingLite_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		8AA04E63878EDA4387CC9AC461314528 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		914601830B193732FCC5ABA37EED1971 /* Pods-WBNetworkingLite_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-WBNetworkingLite_Tests.modulemap"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9BA161E7647A4FFA491D0A226D68360E /* WBNetworkingLite.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WBNetworkingLite.h; path = WBNetworkingLite/Classes/WBNetworkingLite.h; sourceTree = "<group>"; };
+		9CF846A9AE6658E2567D376A780459E7 /* Reachability-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Reachability-prefix.pch"; sourceTree = "<group>"; };
+		AA8690F3A38919739A35418C9B5F71FA /* Pods-WBNetworkingLite_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WBNetworkingLite_Example-dummy.m"; sourceTree = "<group>"; };
+		AAE7DBEE18B826B64746654912DA85BD /* Reachability.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Reachability.xcconfig; sourceTree = "<group>"; };
+		ACC2F83109D6340BB49381BB28117929 /* WBNetworkingLite-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WBNetworkingLite-umbrella.h"; sourceTree = "<group>"; };
+		AE1D8698674DFE1E30A239044FF3F7FA /* WBNetworkingLite-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "WBNetworkingLite-dummy.m"; sourceTree = "<group>"; };
+		B0654B1C08E340CF056453E1DC8E6EE2 /* Reachability.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Reachability.framework; path = Reachability.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1A783687DEA6A93FF12B060D32396CE /* Pods_WBNetworkingLite_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_WBNetworkingLite_Example.framework; path = "Pods-WBNetworkingLite_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B91F1B59794DF7B7D52D563E52E95DE1 /* LYNetWorkingConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LYNetWorkingConfig.h; path = WBNetworkingLite/Classes/LYNetWorkingConfig.h; sourceTree = "<group>"; };
+		C9709924C5EBEE1B0CD00BBDE2A8A463 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE79423843AD9C7ECDB209632D06E9B8 /* Pods-WBNetworkingLite_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-WBNetworkingLite_Example.modulemap"; sourceTree = "<group>"; };
+		D26E5C6A8A1941D73C0D88F468284A69 /* Pods-WBNetworkingLite_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WBNetworkingLite_Example-resources.sh"; sourceTree = "<group>"; };
+		D34F4CDC64DC5D3F5FC1CD5E4F71579B /* Reachability.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		DB2F90F1071FD71D4970BCD255F0FA2D /* Reachability.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Reachability.modulemap; sourceTree = "<group>"; };
+		DB6383EFD787345D28D5F45944D56A90 /* Pods-WBNetworkingLite_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WBNetworkingLite_Tests-dummy.m"; sourceTree = "<group>"; };
+		DE96A83E3343C944FF5C775805DC1B40 /* WBNetworkingLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = WBNetworkingLite.framework; path = WBNetworkingLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB454930BB73D48F6F74E6DCAA26DF4F /* LYNetWorkingManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LYNetWorkingManager.h; path = WBNetworkingLite/Classes/LYNetWorkingManager.h; sourceTree = "<group>"; };
+		FBC3B330BD3E3F521F4D99ED8D664E9F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		21070456D694042AC8A786849906CA16 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21500394ECB9A988F65B7542C9F6EDE8 /* Foundation.framework in Frameworks */,
+				9A1DB7615A1CB02CE124A83BCCDFF213 /* Reachability.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BD15FB03E05B28060C0B323F0DD1231 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D42250A9D136BB999ABC3D09C06AE2E8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C1C8BBB052BE6D54457046D2B1FADFF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63122F8872D58543D7E3E43D817942E6 /* Foundation.framework in Frameworks */,
+				641F8B99E928F040750C5C444BB8F680 /* SystemConfiguration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA74DA7C430E0D0940750DEDB1EB4BCC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42E8639AFDA21316BDEB6CC992FF0E1E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2BAF4938B9F107883874E99470FCFF17 /* Pods-WBNetworkingLite_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				1DF02C34612E248A2051EDC0423B83DD /* Info.plist */,
+				914601830B193732FCC5ABA37EED1971 /* Pods-WBNetworkingLite_Tests.modulemap */,
+				18216F6B6EBAF7EC00A564704DA825D7 /* Pods-WBNetworkingLite_Tests-acknowledgements.markdown */,
+				1F867131F9CB3309093CA496144B945D /* Pods-WBNetworkingLite_Tests-acknowledgements.plist */,
+				DB6383EFD787345D28D5F45944D56A90 /* Pods-WBNetworkingLite_Tests-dummy.m */,
+				85511C7D60C18B0880A54222A04F7720 /* Pods-WBNetworkingLite_Tests-frameworks.sh */,
+				781AFEEF2AF3D4EA837079DD9CCA39A5 /* Pods-WBNetworkingLite_Tests-resources.sh */,
+				69E1977D2336041C1E68124312607795 /* Pods-WBNetworkingLite_Tests-umbrella.h */,
+				5A5DB8BF965D476B48E76F41899D8A01 /* Pods-WBNetworkingLite_Tests.debug.xcconfig */,
+				36A835A2F620F642B44C0E248FD5FDEB /* Pods-WBNetworkingLite_Tests.release.xcconfig */,
+			);
+			name = "Pods-WBNetworkingLite_Tests";
+			path = "Target Support Files/Pods-WBNetworkingLite_Tests";
+			sourceTree = "<group>";
+		};
+		2CF4FD98D1C6A072F9DAB025DDBB955F /* Pods-WBNetworkingLite_Example */ = {
+			isa = PBXGroup;
+			children = (
+				5ADAACA697EC7AA6CE7EA2797F45573B /* Info.plist */,
+				CE79423843AD9C7ECDB209632D06E9B8 /* Pods-WBNetworkingLite_Example.modulemap */,
+				55FFBA2870F5F50CEFAFC0BA8C2A7748 /* Pods-WBNetworkingLite_Example-acknowledgements.markdown */,
+				642DF5F92EDE72BDA53F208583AE40CA /* Pods-WBNetworkingLite_Example-acknowledgements.plist */,
+				AA8690F3A38919739A35418C9B5F71FA /* Pods-WBNetworkingLite_Example-dummy.m */,
+				471B597FBCDB02B376DEA941057AB333 /* Pods-WBNetworkingLite_Example-frameworks.sh */,
+				D26E5C6A8A1941D73C0D88F468284A69 /* Pods-WBNetworkingLite_Example-resources.sh */,
+				5F7171DC31734493AC6C0ABCC8AA882F /* Pods-WBNetworkingLite_Example-umbrella.h */,
+				6B0FD50B1D6D88AD89BD8559C385BA16 /* Pods-WBNetworkingLite_Example.debug.xcconfig */,
+				0A553202577B6238B4461E9BDE397DD2 /* Pods-WBNetworkingLite_Example.release.xcconfig */,
+			);
+			name = "Pods-WBNetworkingLite_Example";
+			path = "Target Support Files/Pods-WBNetworkingLite_Example";
+			sourceTree = "<group>";
+		};
+		32BFBFBE8CEC116C6D71D62E66976535 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B1A783687DEA6A93FF12B060D32396CE /* Pods_WBNetworkingLite_Example.framework */,
+				416FC7563864EE761689095B07F04F93 /* Pods_WBNetworkingLite_Tests.framework */,
+				B0654B1C08E340CF056453E1DC8E6EE2 /* Reachability.framework */,
+				DE96A83E3343C944FF5C775805DC1B40 /* WBNetworkingLite.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		49C0AF77138CF0112F9CC7F41D887B07 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C9709924C5EBEE1B0CD00BBDE2A8A463 /* Info.plist */,
+				3FD97031E5D2BEDC3E6FCBED52AC745F /* WBNetworkingLite.modulemap */,
+				0B9209E13562578E3BE6213146896F31 /* WBNetworkingLite.xcconfig */,
+				AE1D8698674DFE1E30A239044FF3F7FA /* WBNetworkingLite-dummy.m */,
+				4A0A2BB6D4358A98106234A4F66170A4 /* WBNetworkingLite-prefix.pch */,
+				ACC2F83109D6340BB49381BB28117929 /* WBNetworkingLite-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/WBNetworkingLite";
+			sourceTree = "<group>";
+		};
+		694952F075DBEFB23E993F3478313095 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				7A936234CB17B250090CB411E06DF362 /* Reachability.h */,
+				D34F4CDC64DC5D3F5FC1CD5E4F71579B /* Reachability.m */,
+				A79FABA01CBD366C7EE32A517AEBA8BC /* Support Files */,
+			);
+			name = Reachability;
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				E58445DBB1E06DDF51B933DBE35C8157 /* Development Pods */,
+				E11672FA369F8978780CD4B9AAA8C034 /* Frameworks */,
+				D02F67554E14C3100F274620CC9E3885 /* Pods */,
+				32BFBFBE8CEC116C6D71D62E66976535 /* Products */,
+				BBE8EA8DCF35D84303DD0F25AD97FB6B /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		93190B05222143B90A3904E6C9DF29FA /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				67BDCA8222186AAE6772023FF85CD770 /* Foundation.framework */,
+				8AA04E63878EDA4387CC9AC461314528 /* SystemConfiguration.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		A79FABA01CBD366C7EE32A517AEBA8BC /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				FBC3B330BD3E3F521F4D99ED8D664E9F /* Info.plist */,
+				DB2F90F1071FD71D4970BCD255F0FA2D /* Reachability.modulemap */,
+				AAE7DBEE18B826B64746654912DA85BD /* Reachability.xcconfig */,
+				081A82A2E9888F43316F467EC6A8401D /* Reachability-dummy.m */,
+				9CF846A9AE6658E2567D376A780459E7 /* Reachability-prefix.pch */,
+				504C1D1C71F35A1CC96C32FC4A47E48A /* Reachability-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Reachability";
+			sourceTree = "<group>";
+		};
+		BBE8EA8DCF35D84303DD0F25AD97FB6B /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2CF4FD98D1C6A072F9DAB025DDBB955F /* Pods-WBNetworkingLite_Example */,
+				2BAF4938B9F107883874E99470FCFF17 /* Pods-WBNetworkingLite_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		D02F67554E14C3100F274620CC9E3885 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				694952F075DBEFB23E993F3478313095 /* Reachability */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E11672FA369F8978780CD4B9AAA8C034 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				64A37CCE8B305B51BF5D9D5BBAE395A2 /* Reachability.framework */,
+				93190B05222143B90A3904E6C9DF29FA /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E31E2D1FBC85D0225CF905125C19B74A /* WBNetworkingLite */ = {
+			isa = PBXGroup;
+			children = (
+				2977E9A4FE8EBC40D62210A60F7B6114 /* LYHMReachability.h */,
+				524967D4DA9DF0F795230B0FE284C780 /* LYHMReachability.m */,
+				0982E899DAC06E60D344E406A2078878 /* LYNetWorking.h */,
+				755AB678C0D3285EFA07673123F5AE7D /* LYNetWorking.m */,
+				B91F1B59794DF7B7D52D563E52E95DE1 /* LYNetWorkingConfig.h */,
+				392A5004E8AFACF3D0CFF3261E7259FD /* LYNetWorkingConfig.m */,
+				FB454930BB73D48F6F74E6DCAA26DF4F /* LYNetWorkingManager.h */,
+				45F14703B608E0FF0438D031B96A2F4C /* LYNetWorkingManager.m */,
+				9BA161E7647A4FFA491D0A226D68360E /* WBNetworkingLite.h */,
+				49C0AF77138CF0112F9CC7F41D887B07 /* Support Files */,
+			);
+			name = WBNetworkingLite;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		E58445DBB1E06DDF51B933DBE35C8157 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E31E2D1FBC85D0225CF905125C19B74A /* WBNetworkingLite */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		3A131C721868E2B7F6B665CADA9F3C4A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25B3B8319CDBB9D316EE06217A05F8A4 /* Pods-WBNetworkingLite_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45E91038C93CD29D48A53365B30A04DC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45AF7EBBEFA45DC091F0B6B7D14B8503 /* LYHMReachability.h in Headers */,
+				B070F4362C73F7B0D7CCA0CEC02D616A /* LYNetWorking.h in Headers */,
+				1913B85B1899D51F75F452D29A2A872C /* LYNetWorkingConfig.h in Headers */,
+				1927E570F7E2A48124B62B602BAE521A /* LYNetWorkingManager.h in Headers */,
+				3F4AED8D91F5DD3FD651668C6CC311B5 /* WBNetworkingLite-umbrella.h in Headers */,
+				0BB1526B15D8B83621335E55AD194BD8 /* WBNetworkingLite.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77FE2FFAE663A3491FF5F2242F6D487C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3B7462B0ED84B5D07BABED117CBC801 /* Reachability-umbrella.h in Headers */,
+				BF7B4A171B96ABAC754DE06B0CC9AF22 /* Reachability.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B337B1A8E34E96235AAC5C5401709DF2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EAA8135DCBCD41FEAFEB10E4352A4F5 /* Pods-WBNetworkingLite_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		187F3CD1A612BDF2482E57BB62CE1E84 /* WBNetworkingLite */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 08DA7594461002B29F26151A848B9827 /* Build configuration list for PBXNativeTarget "WBNetworkingLite" */;
+			buildPhases = (
+				5640FA97085AC349807DB4776C2F3775 /* Sources */,
+				21070456D694042AC8A786849906CA16 /* Frameworks */,
+				45E91038C93CD29D48A53365B30A04DC /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C2AEC4B54164E797F79659183C57FBF8 /* PBXTargetDependency */,
+			);
+			name = WBNetworkingLite;
+			productName = WBNetworkingLite;
+			productReference = DE96A83E3343C944FF5C775805DC1B40 /* WBNetworkingLite.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9061B01F7F798C54ACF28CB17BD473B5 /* Reachability */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6B2386CA305BBC50F3B8C98C0734C007 /* Build configuration list for PBXNativeTarget "Reachability" */;
+			buildPhases = (
+				86AB22A01FF6F4D2EA9DDE6BBC8B9E76 /* Sources */,
+				8C1C8BBB052BE6D54457046D2B1FADFF /* Frameworks */,
+				77FE2FFAE663A3491FF5F2242F6D487C /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Reachability;
+			productName = Reachability;
+			productReference = B0654B1C08E340CF056453E1DC8E6EE2 /* Reachability.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D0168B2FDD7099F691416E29AFEF3166 /* Pods-WBNetworkingLite_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 36B688E8854E4D510BE44409337B2AFD /* Build configuration list for PBXNativeTarget "Pods-WBNetworkingLite_Tests" */;
+			buildPhases = (
+				FF411428B13D5F5600E6621199007ABD /* Sources */,
+				3BD15FB03E05B28060C0B323F0DD1231 /* Frameworks */,
+				3A131C721868E2B7F6B665CADA9F3C4A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-WBNetworkingLite_Tests";
+			productName = "Pods-WBNetworkingLite_Tests";
+			productReference = 416FC7563864EE761689095B07F04F93 /* Pods_WBNetworkingLite_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F3010CD3017C2294AC3F0931A02F1853 /* Pods-WBNetworkingLite_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3437D9080AFCC25C254A14EA6CD26AF /* Build configuration list for PBXNativeTarget "Pods-WBNetworkingLite_Example" */;
+			buildPhases = (
+				40DEC830AE14EA95AA6CEDF061846BDD /* Sources */,
+				EA74DA7C430E0D0940750DEDB1EB4BCC /* Frameworks */,
+				B337B1A8E34E96235AAC5C5401709DF2 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				493743F3878DD0AEEFD5366C3D75E3D8 /* PBXTargetDependency */,
+				814BC13F933080ED1096BC55D3812C1E /* PBXTargetDependency */,
+			);
+			name = "Pods-WBNetworkingLite_Example";
+			productName = "Pods-WBNetworkingLite_Example";
+			productReference = B1A783687DEA6A93FF12B060D32396CE /* Pods_WBNetworkingLite_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 32BFBFBE8CEC116C6D71D62E66976535 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F3010CD3017C2294AC3F0931A02F1853 /* Pods-WBNetworkingLite_Example */,
+				D0168B2FDD7099F691416E29AFEF3166 /* Pods-WBNetworkingLite_Tests */,
+				9061B01F7F798C54ACF28CB17BD473B5 /* Reachability */,
+				187F3CD1A612BDF2482E57BB62CE1E84 /* WBNetworkingLite */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		40DEC830AE14EA95AA6CEDF061846BDD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E581F9E533AE3E5CE3032E6EA3B1BE5F /* Pods-WBNetworkingLite_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5640FA97085AC349807DB4776C2F3775 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE33EC6B4D9DF2D4594B2F0D43945DC3 /* LYHMReachability.m in Sources */,
+				8FFDA9F9A8D5115102DB8863030D638A /* LYNetWorking.m in Sources */,
+				575F20E6BBF066D208DA96C645C7BB69 /* LYNetWorkingConfig.m in Sources */,
+				FA27E8642DEC83D1539EA7DDE632D3C3 /* LYNetWorkingManager.m in Sources */,
+				9DCE73BB965FFCC2D5889188570D18F7 /* WBNetworkingLite-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86AB22A01FF6F4D2EA9DDE6BBC8B9E76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6F8402A85A4E9C9E232CFAFFA49B0C0 /* Reachability-dummy.m in Sources */,
+				EA15E4C20397D30EF865053C0205C851 /* Reachability.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF411428B13D5F5600E6621199007ABD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D43998EFEDFD453327BDFA6ED308751 /* Pods-WBNetworkingLite_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		493743F3878DD0AEEFD5366C3D75E3D8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Reachability;
+			target = 9061B01F7F798C54ACF28CB17BD473B5 /* Reachability */;
+			targetProxy = 7053703A826F22B91AAA8667FD7E8CED /* PBXContainerItemProxy */;
+		};
+		814BC13F933080ED1096BC55D3812C1E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = WBNetworkingLite;
+			target = 187F3CD1A612BDF2482E57BB62CE1E84 /* WBNetworkingLite */;
+			targetProxy = 575F2ED52C45E8CC7143F674A94297E4 /* PBXContainerItemProxy */;
+		};
+		C2AEC4B54164E797F79659183C57FBF8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Reachability;
+			target = 9061B01F7F798C54ACF28CB17BD473B5 /* Reachability */;
+			targetProxy = C2A802E20575615E29B1001E503DC890 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1F689520FC6989F62BB1FEDAE20DA19F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A5DB8BF965D476B48E76F41899D8A01 /* Pods-WBNetworkingLite_Tests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-WBNetworkingLite_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-WBNetworkingLite_Tests/Pods-WBNetworkingLite_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_WBNetworkingLite_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		33DA7F43A1D2FA3C74A8C8FC246E1FA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		5C31625122BD44A726292148FC6D690F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AAE7DBEE18B826B64746654912DA85BD /* Reachability.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Reachability/Reachability-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Reachability/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Reachability/Reachability.modulemap";
+				PRODUCT_NAME = Reachability;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6740752A78479463522A56D047D70B9F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B0FD50B1D6D88AD89BD8559C385BA16 /* Pods-WBNetworkingLite_Example.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-WBNetworkingLite_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-WBNetworkingLite_Example/Pods-WBNetworkingLite_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_WBNetworkingLite_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		731DC216E1A58545B559F6E0A2418060 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		91927F016547CB7F8B4F82967F8BBABD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AAE7DBEE18B826B64746654912DA85BD /* Reachability.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Reachability/Reachability-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Reachability/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Reachability/Reachability.modulemap";
+				PRODUCT_NAME = Reachability;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		995070E3C67315D6E71E147536165966 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36A835A2F620F642B44C0E248FD5FDEB /* Pods-WBNetworkingLite_Tests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-WBNetworkingLite_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-WBNetworkingLite_Tests/Pods-WBNetworkingLite_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_WBNetworkingLite_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B8362349FA2EE2D62874C53D95580C15 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B9209E13562578E3BE6213146896F31 /* WBNetworkingLite.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/WBNetworkingLite/WBNetworkingLite-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/WBNetworkingLite/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/WBNetworkingLite/WBNetworkingLite.modulemap";
+				PRODUCT_NAME = WBNetworkingLite;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BCCAF3B30ECBF8BB9CAD4AB701FD9532 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A553202577B6238B4461E9BDE397DD2 /* Pods-WBNetworkingLite_Example.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-WBNetworkingLite_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-WBNetworkingLite_Example/Pods-WBNetworkingLite_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_WBNetworkingLite_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C7A0305C946FCEC2E22BFD938CCA9E96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B9209E13562578E3BE6213146896F31 /* WBNetworkingLite.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/WBNetworkingLite/WBNetworkingLite-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/WBNetworkingLite/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/WBNetworkingLite/WBNetworkingLite.modulemap";
+				PRODUCT_NAME = WBNetworkingLite;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		08DA7594461002B29F26151A848B9827 /* Build configuration list for PBXNativeTarget "WBNetworkingLite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7A0305C946FCEC2E22BFD938CCA9E96 /* Debug */,
+				B8362349FA2EE2D62874C53D95580C15 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33DA7F43A1D2FA3C74A8C8FC246E1FA6 /* Debug */,
+				731DC216E1A58545B559F6E0A2418060 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		36B688E8854E4D510BE44409337B2AFD /* Build configuration list for PBXNativeTarget "Pods-WBNetworkingLite_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F689520FC6989F62BB1FEDAE20DA19F /* Debug */,
+				995070E3C67315D6E71E147536165966 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6B2386CA305BBC50F3B8C98C0734C007 /* Build configuration list for PBXNativeTarget "Reachability" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91927F016547CB7F8B4F82967F8BBABD /* Debug */,
+				5C31625122BD44A726292148FC6D690F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C3437D9080AFCC25C254A14EA6CD26AF /* Build configuration list for PBXNativeTarget "Pods-WBNetworkingLite_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6740752A78479463522A56D047D70B9F /* Debug */,
+				BCCAF3B30ECBF8BB9CAD4AB701FD9532 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

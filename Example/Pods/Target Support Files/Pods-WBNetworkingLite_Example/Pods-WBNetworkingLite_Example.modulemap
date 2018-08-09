@@ -1,0 +1,6 @@
+framework module Pods_WBNetworkingLite_Example {
+  umbrella header "Pods-WBNetworkingLite_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

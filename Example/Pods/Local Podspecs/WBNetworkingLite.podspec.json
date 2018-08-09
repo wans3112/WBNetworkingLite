@@ -1,0 +1,26 @@
+{
+  "name": "WBNetworkingLite",
+  "version": "1.0.0",
+  "summary": "WBNetworkingLite-基于NSURLSession网络库封装",
+  "homepage": "http://https://github.com/wans3112/LYNetworking",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "MRCaoHH": "wanslm@foxmail.com"
+  },
+  "source": {
+    "git": "http://https://github.com/wans3112/WBNetworkingLite.git",
+    "tag": "1.0.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "WBNetworkingLite/Classes/**/*",
+  "dependencies": {
+    "Reachability": [
+
+    ]
+  }
+}
