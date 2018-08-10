@@ -1,19 +1,14 @@
 //
-//  LYNetWorkingConfig.m
-//  LYNetWorkingExample
+//  WBNetworkingConfig.m
+//  WBNetworkingExample
 //
 //  Created by wans on 2017/9/14.
 //  Copyright © 2017年 wans. All rights reserved.
 //
 
-#import "LYNetWorkingConfig.h"
-#import "LYNetWorking.h"
+#import "WBNetworkingConfig.h"
 
-@implementation LYUploadData
-
-@end
-
-@implementation LYNetWorkingConfig
+@implementation WBNetworkingConfig
 
 - (NSTimeInterval)timeoutInterval {
 
@@ -38,7 +33,7 @@
 @end
 
 
-@implementation LYHttpRequestOrder
+@implementation WBRequestConfig
 
 - (NSString *)url {
 
@@ -48,5 +43,10 @@
     }
     return _url;
 }
+
+@end
+
+
+@implementation WBUploadData
 
 @end

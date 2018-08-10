@@ -8,6 +8,6 @@
 
 @import UIKit;
 
-@interface WBNetworkingLiteViewController : UIViewController
+@interface WBViewController : UIViewController
 
 @end

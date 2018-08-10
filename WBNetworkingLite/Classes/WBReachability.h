@@ -1,5 +1,5 @@
 //
-//  LYHMReachability.h
+//  WBHMReachability.h
 //  Pods
 //
 //  Created by wans on 2017/9/19.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <Reachability/Reachability.h>
 
-@interface LYHMReachability : NSObject
+@interface WBReachability : NSObject
 
 /**
  网络是否可用

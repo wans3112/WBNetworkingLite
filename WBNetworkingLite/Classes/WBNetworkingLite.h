@@ -8,8 +8,8 @@
 #ifndef WBNetworkingLite_h
 #define WBNetworkingLite_h
 
-#import <WBNetworkingLite/LYNetworking.h>
-#import <WBNetworkingLite/LYNetWorkingConfig.h>
-#import <WBNetworkingLite/LYHMReachability.h>
+#import <WBNetworkingLite/WBNetworking.h>
+#import <WBNetworkingLite/WBNetworkingConfig.h>
+#import <WBNetworkingLite/WBReachability.h>
 
 #endif /* WBNetworkingLite_h */

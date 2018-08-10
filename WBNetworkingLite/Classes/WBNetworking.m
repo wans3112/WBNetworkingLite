@@ -1,56 +1,57 @@
 //
-//  LYNetWork.m
-//  LYExampleProject
+//  WBNetWork.m
+//  WBExampleProject
 //
 //  Created by wans on 2017/5/4.
 //  Copyright © 2017年 wans. All rights reserved.
 //
 
-#import "LYNetWorking.h"
-#import "LYNetWorkingManager.h"
+#import "WBNetworking.h"
+#import "WBNetworkingManager.h"
 #import "objc/runtime.h"
+#import "WBReachability.h"
 
-@interface LYNetWorking ()
+@interface WBNetworking ()
 
 @end
 
-@implementation LYNetWorking
+@implementation WBNetworking
 
-+ (void)POST:(LYHttpRequestConfig)request response:(LYHttpResponse)response {
++ (void)POST:(WBHttpRequestConfig)request response:(WBHttpResponse)response {
 
-    [[self class] request:request method:kLYHttpMethodPost response:response];
+    [[self class] request:request method:kWBHttpMethodPost response:response];
 }
 
-+ (void)GET:(LYHttpRequestConfig)request response:(LYHttpResponse)response {
++ (void)GET:(WBHttpRequestConfig)request response:(WBHttpResponse)response {
     
-    [[self class] request:request method:kLYHttpMethodGet response:response];
+    [[self class] request:request method:kWBHttpMethodGet response:response];
 }
 
-+ (void)PUT:(LYHttpRequestConfig)request response:(LYHttpResponse)response {
-    [[self class] request:request method:kLYHttpMethodPut response:response];
++ (void)PUT:(WBHttpRequestConfig)request response:(WBHttpResponse)response {
+    [[self class] request:request method:kWBHttpMethodPut response:response];
 }
 
-+ (void)DELETE:(LYHttpRequestConfig)request response:(LYHttpResponse)response {
-    [[self class] request:request method:kLYHttpMethodDelete response:response];
++ (void)DELETE:(WBHttpRequestConfig)request response:(WBHttpResponse)response {
+    [[self class] request:request method:kWBHttpMethodDelete response:response];
 }
 
-+ (void)UPLOAD:(LYHttpRequestConfig)request uploadData:(LYHttpUploadData)uploadData progress:(LYHttpProgress)progress response:(LYHttpResponse)response {
++ (void)UPLOAD:(WBHttpRequestConfig)request uploadData:(WBHttpUploadData)uploadData progress:(WBHttpProgress)progress response:(WBHttpResponse)response {
     
-    [[self class] request:request method:kLYHttpMethodUpload uploadData:uploadData progress:progress response:response];
+    [[self class] request:request method:kWBHttpMethodUpload uploadData:uploadData progress:progress response:response];
 }
 
-+ (void)DOWNLOAD:(LYHttpRequestConfig)request progress:(LYHttpProgress)progress response:(LYHttpResponse)response {
++ (void)DOWNLOAD:(WBHttpRequestConfig)request progress:(WBHttpProgress)progress response:(WBHttpResponse)response {
     
-    [[self class] request:request method:kLYHttpMethodDownLoad uploadData:nil progress:progress response:response];
+    [[self class] request:request method:kWBHttpMethodDownLoad uploadData:nil progress:progress response:response];
 }
 
-+ (void)request:(LYHttpRequestConfig)request method:(NSString *)method response:(LYHttpResponse)response {
++ (void)request:(WBHttpRequestConfig)request method:(NSString *)method response:(WBHttpResponse)response {
     [[self class] request:request method:method uploadData:nil progress:nil response:response];
 }
 
-+ (void)request:(LYHttpRequestConfig)request method:(NSString *)method uploadData:(LYHttpUploadData)uploadData progress:(LYHttpProgress)progress response:(LYHttpResponse)response {
++ (void)request:(WBHttpRequestConfig)request method:(NSString *)method uploadData:(WBHttpUploadData)uploadData progress:(WBHttpProgress)progress response:(WBHttpResponse)response {
     
-    if ( ![LYHMReachability isReachable] && response ) {
+    if ( ![WBReachability isReachable] && response ) {
         
         [[self class] handerWithPrepareWhenNOInternet:response];
         
@@ -69,7 +70,7 @@
         // 如果超出最大并发数，则等待资源释放
         dispatch_semaphore_wait(seqeue_semaphore, DISPATCH_TIME_FOREVER);
 
-        LYNetWorkingManager *requestManager = [[LYNetWorkingManager alloc] initWithRequest:request method:method];
+        WBNetworkingManager *requestManager = [[WBNetworkingManager alloc] initWithRequest:request method:method];
         [requestManager configUploadData:uploadData];
         [requestManager configProgress:progress];
         [requestManager excuteTaskResponse:^(id  _Nonnull responseData, NSError * _Nonnull error) {
@@ -88,12 +89,12 @@
 
     NSAssert(url.length > 0, @"无效请求地址");
     
-    NSURLSessionTask *task = [LYNetWorkingManager taskWithKey:url];
+    NSURLSessionTask *task = [WBNetworkingManager taskWithKey:url];
     
     if ( task ) {
         [task cancel];
         
-        [LYNetWorkingManager removeTaskWithKey:url];
+        [WBNetworkingManager removeTaskWithKey:url];
     }
 }
 
@@ -103,7 +104,7 @@
  
  @param response 失败回调
  */
-+ (void)handerWithPrepareWhenNOInternet:(LYHttpResponse)response {
++ (void)handerWithPrepareWhenNOInternet:(WBHttpResponse)response {
     
     NSError *error = [NSError errorWithDomain:@"" code:-1000 userInfo:@{@"msg":kDefaultNetworkelessMsg}];
     
@@ -113,16 +114,16 @@
 #pragma mark - Getter&&Setter
 
 // 网络库全局配置
-static LYNetWorkingConfig   *httpConfig;
+static WBNetworkingConfig   *httpConfig;
 
-+ (LYNetWorkingConfig *)httpConfig {
++ (WBNetworkingConfig *)config {
     
     return httpConfig;
 }
 
-+ (void)setupHttpConfig:(LYHttpConfig)config {
++ (void)setupConfig:(WBHttpConfig)config {
     
-    LYNetWorkingConfig *tempConfig = [LYNetWorkingConfig new];
+    WBNetworkingConfig *tempConfig = [WBNetworkingConfig new];
     config(tempConfig);
     
     // 去除为空的字段
@@ -132,9 +133,9 @@ static LYNetWorkingConfig   *httpConfig;
     httpConfig = tempConfig;
 }
 
-+ (void)updateHttpConfig:(LYHttpConfig)config {
++ (void)updateHttpConfig:(WBHttpConfig)config {
     
-    LYNetWorkingConfig *tempConfig = [LYNetWorkingConfig new];
+    WBNetworkingConfig *tempConfig = [WBNetworkingConfig new];
     config(tempConfig);
     
     // 如果已经配置属性，则只更新属性

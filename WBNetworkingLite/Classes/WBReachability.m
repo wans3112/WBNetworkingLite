@@ -1,15 +1,15 @@
 //
-//  LYHMReachability.m
+//  WBHMReachability.m
 //  Pods
 //
 //  Created by wans on 2017/9/19.
 //
 //
 
-#import "LYHMReachability.h"
+#import "WBReachability.h"
 #import "objc/runtime.h"
 
-@implementation LYHMReachability
+@implementation WBReachability
 
 static Reachability *reach;
 

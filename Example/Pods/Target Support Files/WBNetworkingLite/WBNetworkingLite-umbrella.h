@@ -10,11 +10,11 @@
 #endif
 #endif
 
-#import "LYHMReachability.h"
-#import "LYNetWorking.h"
-#import "LYNetWorkingConfig.h"
-#import "LYNetWorkingManager.h"
+#import "WBNetworking.h"
+#import "WBNetworkingConfig.h"
 #import "WBNetworkingLite.h"
+#import "WBNetworkingManager.h"
+#import "WBReachability.h"
 
 FOUNDATION_EXPORT double WBNetworkingLiteVersionNumber;
 FOUNDATION_EXPORT const unsigned char WBNetworkingLiteVersionString[];

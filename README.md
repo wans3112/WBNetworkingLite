@@ -12,10 +12,10 @@
 ###### 初始化配置
 
 ```
-[LYNetWorking setupHttpConfig:^(LYNetWorkingConfig *config) {
+[WBNetworking setupConfig:^(WBRequestConfig *config) {
     config.baseUrl = @"https://api.douban.com";
     config.timeoutInterval     = 10;
-    config.defaultParameters   = @{@"no":[LYKeychain uudi]};
+    config.defaultParameters   = @{@"no":[WBKeychain uudi]};
     config.defaultHeaderFields = @{
                                  @"Accept-Encoding":@"gzip, deflate, sdch",
                                  @"Accept-Language":@"keep-alive",
@@ -28,7 +28,7 @@
 更新配置(只会更新，不会替换字段的值)
 
 ```
-[LYNetWorking setupHttpConfig:^(LYNetWorkingConfig * _Nonnull config) {
+[WBNetworking updateConfig:^(WBRequestConfig * _Nonnull config) {
    config.defaultParameters = @{@"token":token};
 }];
 
@@ -37,7 +37,7 @@
 ###### GET请求
 
 ``` objectivec
-[LYNetWorking GET:^(LYHttpRequestOrder *request) {
+[WBNetworking GET:^(WBRequestConfig *request) {
     request.url = @"/v2/movie/coming_soon";
 } response:^(id response, NSError *error) {
     NSLog(@"response:%@", response);
@@ -48,7 +48,7 @@
 ###### POST请求
 
 ``` objectivec
-[LYNetWorking POST:^(LYHttpRequestOrder *request) {
+[WBNetworking POST:^(WBRequestConfig *request) {
     request.url = @"/lawyer/login";
     request.parameters = @{@"user":@"18565823225", @"pwd":@"96E79218965EB72C92A549DD5A330112"};
 } response:^(id response, NSError *error) {
@@ -61,7 +61,7 @@
 ###### PUT请求
 
 ``` objectivec
-[LYHttpManager PUT:^(LYHttpRequestOrder *request) {
+[WBNetworking PUT:^(WBRequestConfig *request) {
     request.url = @"/lawyer/past-case";
     request.rf_parameters = @[@"wans"];
     request.parameters = @{@"username":@"wans",@"password":@"123"};
@@ -75,7 +75,7 @@
 ###### Delete请求
 
 ``` objectivec
-[LYHttpManager DELETE:^(LYHttpRequestOrder *request) {
+[WBNetworking DELETE:^(WBRequestConfig *request) {
     request.url = @"/lawyer/past-case";
     request.rf_parameters = @[@"深圳"];
 } response:^(id response, NSError *error) {
@@ -91,9 +91,9 @@
 
 NSData *data = UIImageJPEGRepresentation(self.imageView.image, 0.5);
 
-[LYNetWorking UPLOAD:^(LYHttpRequestOrder *request) {
+[WBNetworking UPLOAD:^(WBRequestConfig *request) {
     request.url = @"/lawyer/lawyer-logo";
-} uploadData:^(LYUploadData *uploadData) {
+} uploadData:^(WBUploadData *uploadData) {
     uploadData.name = @"logo";
     uploadData.filename = @"logo.jpg";
     uploadData.contentType = @"image/jpg";
@@ -108,7 +108,7 @@ NSData *data = UIImageJPEGRepresentation(self.imageView.image, 0.5);
 
 ###### 下载请求
 ```objectivec
-[LYNetWorking DOWNLOAD:^(LYHttpRequestOrder *request) {
+[WBNetworking DOWNLOAD:^(WBRequestConfig *request) {
     request.url = @"https://img6.bdstatic.com/img/image/public/yuanjihuasy.png";
 } response:^(id  response, NSError *error) {
     self.imageView.image = [UIImage imageWithData:response];
@@ -119,5 +119,5 @@ NSData *data = UIImageJPEGRepresentation(self.imageView.image, 0.5);
 >请求与请求地址url关联，可以通过url取消正在发送的请求。
 
 ```objectivec
-[LYNetWorking CANCLE:@"/user/get-activity-img"];
+[WBNetworking CANCLE:@"/user/get-activity-img"];
 ```

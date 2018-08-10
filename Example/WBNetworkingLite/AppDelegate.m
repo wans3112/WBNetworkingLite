@@ -6,16 +6,16 @@
 //  Copyright (c) 2018 wans3112. All rights reserved.
 //
 
-#import "WBNetworkingLiteAppDelegate.h"
+#import "AppDelegate.h"
 #import <WBNetworkingLite/WBNetworkingLite.h>
 
-@implementation WBNetworkingLiteAppDelegate
+@implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
     // 初始化服务器地址
-    [LYNetWorking setupHttpConfig:^(LYNetWorkingConfig *config) {
+    [WBNetworking setupConfig:^(WBNetworkingConfig *config) {
         config.baseUrl = @"https://api.douban.com";
         config.defaultHeaderFields = @{@"token":@"123456", @"appVersion":@"1.0.0"};
     }];

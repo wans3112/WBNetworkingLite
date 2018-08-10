@@ -1,15 +1,15 @@
 //
-//  LYNetWorkingManager.h
-//  LYExampleProject
+//  WBNetworkingManager.h
+//  WBExampleProject
 //
 //  Created by wans on 2017/5/9.
 //  Copyright © 2017年 wans. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "LYNetWorkingConfig.h"
+#import "WBNetworkingConfig.h"
 
-@interface LYNetWorkingManager : NSObject
+@interface WBNetworkingManager : NSObject
 
 /**
  初始化
@@ -18,7 +18,7 @@
  @param method 请求类型
  @return 实例
  */
-- (instancetype)initWithRequest:(LYHttpRequestConfig)request method:(NSString *)method;
+- (instancetype)initWithRequest:(WBHttpRequestConfig)request method:(NSString *)method;
 
 
 
@@ -27,14 +27,14 @@
 
  @param progressBlock 进度回调
  */
-- (void)configProgress:(LYHttpProgress)progressBlock;
+- (void)configProgress:(WBHttpProgress)progressBlock;
 
 /**
  配置上传内容
 
  @param uploadDataBlock 上传数据配置
  */
-- (void)configUploadData:(LYHttpUploadData)uploadDataBlock;
+- (void)configUploadData:(WBHttpUploadData)uploadDataBlock;
 
 
 /**
@@ -42,7 +42,7 @@
 
  @param response 完成回调
  */
-- (void)excuteTaskResponse:(LYHttpResponse)response;
+- (void)excuteTaskResponse:(WBHttpResponse)response;
 
 
 /**

@@ -1,29 +1,29 @@
 //
-//  LYNetWorkingManager.m
-//  LYExampleProject
+//  WBNetworkingManager.m
+//  WBExampleProject
 //
 //  Created by wans on 2017/5/9.
 //  Copyright © 2017年 wans. All rights reserved.
 //
 
-#import "LYNetWorkingManager.h"
+#import "WBNetworkingManager.h"
 #import "objc/runtime.h"
-#import "LYNetWorking.h"
+#import "WBNetworking.h"
 
-static NSString *const LYNetWorkingContentTypeUrlEncoded       =   @"application/x-www-form-urlencoded";
-static NSString *const LYNetWorkingContentTypeJson             =   @"application/json";
+static NSString *const WBNetworkingContentTypeUrlEncoded       =   @"application/x-www-form-urlencoded";
+static NSString *const WBNetworkingContentTypeJson             =   @"application/json";
 
 // 打印日志
 #ifdef DEBUG
-#define LYNWLog(format, ...) \
-if( ![LYNetWorking httpConfig].disEnableLog ){ \
+#define WBNWLog(format, ...) \
+if( ![WBNetworking config].disEnableLog ){ \
 printf("%s\n", [[NSString stringWithFormat:(format), ##__VA_ARGS__] UTF8String] ); \
 }
 #else
-#define LYNWLog(format, ...)
+#define WBNWLog(format, ...)
 #endif
 
-@interface LYNetWorkingManager ()<NSURLSessionTaskDelegate>
+@interface WBNetworkingManager ()<NSURLSessionTaskDelegate>
 
 @property (nonatomic,strong) NSString            *url, *originalUrl;
 
@@ -44,21 +44,21 @@ printf("%s\n", [[NSString stringWithFormat:(format), ##__VA_ARGS__] UTF8String] 
 
 @end
 
-@implementation LYNetWorkingManager
+@implementation WBNetworkingManager
 
-- (id)setupRequest:(id)instance block:(LYHttpRequestConfig)request {
+- (id)setupRequest:(id)instance block:(WBHttpRequestConfig)request {
     if (request) {
         request(instance);
     }
     return instance;
 }
 
-- (instancetype)initWithRequest:(LYHttpRequestConfig)request method:(NSString *)method {
+- (instancetype)initWithRequest:(WBHttpRequestConfig)request method:(NSString *)method {
 
     self = [super init];
     if ( self ) {
         
-        LYHttpRequestOrder *order = [self setupRequest:[LYHttpRequestOrder new] block:request];
+        WBRequestConfig *order = [self setupRequest:[WBRequestConfig new] block:request];
         self.url           = order.url;
         self.parameters    = order.parameters;
         self.rf_parameters = order.rf_parameters;
@@ -83,7 +83,7 @@ printf("%s\n", [[NSString stringWithFormat:(format), ##__VA_ARGS__] UTF8String] 
     NSMutableURLRequest *mutableRequest = [NSMutableURLRequest requestWithURL:requestURL];
     
     NSString *queryString = nil;
-    if ( [self.method isEqualToString:kLYHttpMethodGet] ) {
+    if ( [self.method isEqualToString:kWBHttpMethodGet] ) {
         
         queryString = QueryStringFromParameters(self.parameters);
         if (queryString && queryString.length > 0) {
@@ -93,16 +93,16 @@ printf("%s\n", [[NSString stringWithFormat:(format), ##__VA_ARGS__] UTF8String] 
             mutableRequest.URL = [NSURL URLWithString:requestUrl];
             
             if ( self.parameters ) {
-                [mutableRequest addValue:LYNetWorkingContentTypeUrlEncoded forHTTPHeaderField:@"Content-Type"];
+                [mutableRequest addValue:WBNetworkingContentTypeUrlEncoded forHTTPHeaderField:@"Content-Type"];
             }
         }
-    }else if ( [self.method isEqualToString:kLYHttpMethodDownLoad] ) {
+    }else if ( [self.method isEqualToString:kWBHttpMethodDownLoad] ) {
         
-        methodName = kLYHttpMethodGet;
+        methodName = kWBHttpMethodGet;
         
-    }else if ( [self.method isEqualToString:kLYHttpMethodUpload] ) {
+    }else if ( [self.method isEqualToString:kWBHttpMethodUpload] ) {
         
-        methodName = kLYHttpMethodPost;
+        methodName = kWBHttpMethodPost;
     }
     
     NSMutableDictionary *httpHeaderFields = @{}.mutableCopy;
@@ -113,7 +113,7 @@ printf("%s\n", [[NSString stringWithFormat:(format), ##__VA_ARGS__] UTF8String] 
     }
     
     // 添加外部传入自定义http header fields
-    NSDictionary *defaultHeaderFields = [LYNetWorking httpConfig].defaultHeaderFields;
+    NSDictionary *defaultHeaderFields = [WBNetworking config].defaultHeaderFields;
     if ( defaultHeaderFields ) {
         [httpHeaderFields addEntriesFromDictionary:defaultHeaderFields];
     }
@@ -124,7 +124,7 @@ printf("%s\n", [[NSString stringWithFormat:(format), ##__VA_ARGS__] UTF8String] 
     }
     
     // 设置超时时间
-    mutableRequest.timeoutInterval = [LYNetWorking httpConfig].timeoutInterval;
+    mutableRequest.timeoutInterval = [WBNetworking config].timeoutInterval;
     mutableRequest.HTTPMethod = methodName;
     mutableRequest.cachePolicy = NSURLRequestReloadIgnoringCacheData;
     
@@ -135,7 +135,7 @@ printf("%s\n", [[NSString stringWithFormat:(format), ##__VA_ARGS__] UTF8String] 
 
     self.mutableRequest = mutableRequest;
     
-    LYNWLog(@"请求地址(%@):%@\n请求参数:%@\n", self.mutableRequest.HTTPMethod, self.url, self.parameters);
+    WBNWLog(@"请求地址(%@):%@\n请求参数:%@\n", self.mutableRequest.HTTPMethod, self.url, self.parameters);
 }
 
 /**
@@ -143,18 +143,18 @@ printf("%s\n", [[NSString stringWithFormat:(format), ##__VA_ARGS__] UTF8String] 
  */
 - (void)setBody {
 
-    if ( [self.method isEqualToString:kLYHttpMethodUpload] ) {
+    if ( [self.method isEqualToString:kWBHttpMethodUpload] ) {
     
         [self setHttpBodyWithUpload];
         return;
     }
     
     // POST || PUT || DELETE
-    if ( [self.method isEqualToString:kLYHttpMethodPost] || [self.method isEqualToString:kLYHttpMethodPut] ) {
+    if ( [self.method isEqualToString:kWBHttpMethodPost] || [self.method isEqualToString:kWBHttpMethodPut] ) {
         if (self.parameters) {
             id bodyDataString = self.parameters;
             if ( ![self.mutableRequest valueForHTTPHeaderField:@"Content-Type"] ) {
-                [self.mutableRequest addValue:LYNetWorkingContentTypeUrlEncoded forHTTPHeaderField:@"Content-Type"];
+                [self.mutableRequest addValue:WBNetworkingContentTypeUrlEncoded forHTTPHeaderField:@"Content-Type"];
                 bodyDataString = QueryStringFromParameters(self.parameters);
             }
             
@@ -170,14 +170,14 @@ printf("%s\n", [[NSString stringWithFormat:(format), ##__VA_ARGS__] UTF8String] 
 
  @param response 完成回调
  */
-- (void)setTask:(LYHttpResponse)response {
+- (void)setTask:(WBHttpResponse)response {
     
     NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfig delegate:self delegateQueue:[NSOperationQueue mainQueue]];
     // 保存session，用于后面获取并解引用
     objc_setAssociatedObject(self, "session", session, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     
-    if ( [self.method isEqualToString:kLYHttpMethodUpload] ) {
+    if ( [self.method isEqualToString:kWBHttpMethodUpload] ) {
         
         NSURLSessionUploadTask *task = [session uploadTaskWithStreamedRequest:self.mutableRequest];
         
@@ -187,7 +187,7 @@ printf("%s\n", [[NSString stringWithFormat:(format), ##__VA_ARGS__] UTF8String] 
 
         [task resume];
         
-    }else if ( [self.method isEqualToString:kLYHttpMethodDownLoad] ) {
+    }else if ( [self.method isEqualToString:kWBHttpMethodDownLoad] ) {
       
         NSURLSessionDownloadTask *task = [session downloadTaskWithRequest:self.mutableRequest];
                 
@@ -210,7 +210,7 @@ printf("%s\n", [[NSString stringWithFormat:(format), ##__VA_ARGS__] UTF8String] 
                 NSString *reslut = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
                 meta = DictionaryWithJsonString(reslut);
 
-                LYNWLog(@"请求返回(%@:%@):\n%@", self.mutableRequest.HTTPMethod, self.url, jsonPrettyString(meta));
+                WBNWLog(@"请求返回(%@:%@):\n%@", self.mutableRequest.HTTPMethod, self.url, jsonPrettyString(meta));
             }
             
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -227,17 +227,17 @@ printf("%s\n", [[NSString stringWithFormat:(format), ##__VA_ARGS__] UTF8String] 
     } 
 }
 
-- (void)configProgress:(LYHttpProgress)progressBlock {
+- (void)configProgress:(WBHttpProgress)progressBlock {
     
     objc_setAssociatedObject(self, "progressBlock", progressBlock, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (void)configUploadData:(LYHttpUploadData)uploadDataBlock {
+- (void)configUploadData:(WBHttpUploadData)uploadDataBlock {
 
     objc_setAssociatedObject(self, "uploadData", uploadDataBlock, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (void)excuteTaskResponse:(LYHttpResponse)response {
+- (void)excuteTaskResponse:(WBHttpResponse)response {
 
     [self setRequest];
     [self setBody];
@@ -257,7 +257,7 @@ printf("%s\n", [[NSString stringWithFormat:(format), ##__VA_ARGS__] UTF8String] 
  */
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didSendBodyData:(int64_t)bytesSent totalBytesSent:(int64_t)totalBytesSent totalBytesExpectedToSend:(int64_t)totalBytesExpectedToSend {
     
-    LYHttpProgress progressBlock = objc_getAssociatedObject(self, "progressBlock");
+    WBHttpProgress progressBlock = objc_getAssociatedObject(self, "progressBlock");
     if ( !self.progress ) {
         self.progress = [NSProgress progressWithTotalUnitCount:totalBytesExpectedToSend];
     }
@@ -282,16 +282,16 @@ printf("%s\n", [[NSString stringWithFormat:(format), ##__VA_ARGS__] UTF8String] 
     [[self class] removeTaskWithKey:self.originalUrl];
     
     // 如果下载成功会NSURLSessionDownloadDelegate中成功回调
-    if ( [self.method isEqualToString:kLYHttpMethodDownLoad] ) {
+    if ( [self.method isEqualToString:kWBHttpMethodDownLoad] ) {
         return;
     }
     
-    LYHttpResponse response = objc_getAssociatedObject(session, "response");
+    WBHttpResponse response = objc_getAssociatedObject(session, "response");
     
     if ( response ) {
         NSString *reslut = [[NSString alloc] initWithData:self.receiveData encoding:NSUTF8StringEncoding];
         id meta = DictionaryWithJsonString(reslut);
-        LYNWLog(@"请求返回(%@:%@):\n%@", self.mutableRequest.HTTPMethod, self.url, jsonPrettyString(meta));
+        WBNWLog(@"请求返回(%@:%@):\n%@", self.mutableRequest.HTTPMethod, self.url, jsonPrettyString(meta));
         
         response(meta, error);
     }
@@ -327,7 +327,7 @@ printf("%s\n", [[NSString stringWithFormat:(format), ##__VA_ARGS__] UTF8String] 
 
 - (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite {
     
-    LYHttpProgress progressBlock = objc_getAssociatedObject(self, "progressBlock");
+    WBHttpProgress progressBlock = objc_getAssociatedObject(self, "progressBlock");
     if ( !self.progress ) {
         self.progress = [NSProgress progressWithTotalUnitCount:totalBytesExpectedToWrite];
     }
@@ -346,9 +346,9 @@ printf("%s\n", [[NSString stringWithFormat:(format), ##__VA_ARGS__] UTF8String] 
 
     NSData *downloadData = [NSData dataWithContentsOfURL:location];
     
-    LYNWLog(@"请求返回(%@:%@):\n下载路径:%@", self.mutableRequest.HTTPMethod, self.url, location.absoluteString);
+    WBNWLog(@"请求返回(%@:%@):\n下载路径:%@", self.mutableRequest.HTTPMethod, self.url, location.absoluteString);
 
-    LYHttpResponse response = objc_getAssociatedObject(session, "response");
+    WBHttpResponse response = objc_getAssociatedObject(session, "response");
     if ( response ) response(downloadData, NULL);
 }
 
@@ -388,9 +388,9 @@ static NSMutableDictionary *currentTasks;
  */
 - (void)setHttpBodyWithUpload {
     
-    LYHttpUploadData uploadDataBlock = objc_getAssociatedObject(self, "uploadData");
+    WBHttpUploadData uploadDataBlock = objc_getAssociatedObject(self, "uploadData");
     
-    LYUploadData *uploadData = [[LYUploadData alloc] init];
+    WBUploadData *uploadData = [[WBUploadData alloc] init];
     if(uploadDataBlock) uploadDataBlock(uploadData);
     
     // 分界线的标识符
@@ -489,7 +489,7 @@ NSDictionary * AddCommonHttpHeaderFields() {
 
     defaultHeaders[@"platform"] = @"IOS";
     
-    NSString *appVersion = [[LYNetWorking httpConfig].defaultHeaderFields objectForKey:@"appVersion"];
+    NSString *appVersion = [[WBNetworking config].defaultHeaderFields objectForKey:@"appVersion"];
     if ( !appVersion ) {
         appVersion = [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"];
         defaultHeaders[@"appVersion"] = appVersion;
@@ -525,8 +525,8 @@ NSDictionary * AddCommonHttpHeaderFields() {
                 [realParams addEntriesFromDictionary:parameters];
             }
             
-            if ( [LYNetWorking httpConfig].defaultParameters ) {
-                [realParams addEntriesFromDictionary:[LYNetWorking httpConfig].defaultParameters];
+            if ( [WBNetworking config].defaultParameters ) {
+                [realParams addEntriesFromDictionary:[WBNetworking config].defaultParameters];
             }
             _parameters = realParams;
             
@@ -539,7 +539,7 @@ NSDictionary * AddCommonHttpHeaderFields() {
 /**
  *
  初始化host地址
- [LYNetWorking setupHttpConfig:^(LYNetWorkingConfig *config) {
+ [WBNetworking setupConfig:^(WBNetworkingConfig *config) {
      config.baseUrl = @"http://192.168.10.224:7080";
  }];
  *
@@ -548,7 +548,7 @@ NSDictionary * AddCommonHttpHeaderFields() {
     
     if ( !_url || _url.length == 0 ) {
         
-        NSString *baseUrl = [[LYNetWorking httpConfig].baseUrl lowercaseString];
+        NSString *baseUrl = [[WBNetworking config].baseUrl lowercaseString];
         
         // restful请求方式会改变url，所以保存原始url，用于销毁处理
         _originalUrl = url;
