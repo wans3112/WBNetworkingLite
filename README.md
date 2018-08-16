@@ -1,4 +1,9 @@
-###### WBNetworkingLite
+## WBNetworkingLite
+
+[![CI Status](http://img.shields.io/travis/zsk425/WBNetworkingLite.svg?style=flat-square)](https://travis-ci.org/zsk425/WBNetworkingLite)
+[![Version](https://img.shields.io/cocoapods/v/WBNetworkingLite.svg?style=flat-square)](http://cocoadocs.org/docsets/WBNetworkingLite)
+[![License](https://img.shields.io/cocoapods/l/WBNetworkingLite.svg?style=flat-square)](http://cocoadocs.org/docsets/WBNetworkingLite)
+[![Platform](https://img.shields.io/cocoapods/p/WBNetworkingLite.svg?style=flat-square)](http://cocoadocs.org/docsets/WBNetworkingLite)
 
 基于NSURLSession的轻量级网络库。
 主要封装了常用的GET, POST, Put,Delete上传, 下载请求。
@@ -8,6 +13,13 @@
 * 网络库内部配置通用HttpHeaderFields,外部扩展可配置自定义默认的HttpHeaderFields，自定义默认的parameters，无需外实现类文件。
 * 上传请求更新，可自由配置上传文件类型。
 * 支持restful Api，并新增Put,Delete请求方式。
+
+###### 安装
+
+```ruby
+platform :ios, '7.0'
+pod "WBNetworkingLite"
+```
 
 ###### 初始化配置
 
