@@ -1,7 +1,5 @@
-use_frameworks!
 
 source 'https://github.com/CocoaPods/Specs.git'
-source 'https://github.com/wans3112/Specs.git'
 
 target 'WBNetworkingLite_Example' do
   pod 'WBNetworkingLite', :path => '../'
