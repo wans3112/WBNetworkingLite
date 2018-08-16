@@ -15,11 +15,11 @@
 // 网络请求数据返回回调
 typedef void (^WBHttpResponse)(id response, NSError *error);
 
-NS_ASSUME_NONNULL_BEGIN
-
 // 调用时，自定义参数参入
 typedef void (^WBHttpRequestConfig)(WBRequestConfig *request);
 typedef void (^WBHttpConfig)(WBNetworkingConfig *config);
+
+
 
 // 上传时参数传入
 typedef void (^WBHttpUploadData)(WBUploadData *uploadData);
@@ -131,4 +131,4 @@ static  NSString *kWBHttpMethodDelete            = @"DELETE";
 
 @end
 
-NS_ASSUME_NONNULL_END
+
