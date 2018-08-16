@@ -7,7 +7,7 @@ notifications:
 language: objective-c
 osx_image: xcode8
 before_install:
-  - cd Examples/
+  - cd Example/
   - pod install
 script:
   - set -o pipefail
